@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DogFood Market</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f3f3f3;
+}
+
+/* HEADER */
+.header{
+    background:#e30613;
+    color:white;
+    padding:15px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    font-weight:700;
+    font-size:22px;
+}
+
+.logo img{
+    width:45px;
+    margin-right:10px;
+}
+
+.icons i{
+    margin-left:25px;
+    font-size:22px;
+    cursor:pointer;
+}
+
+/* NAV */
+.nav{
+    background:#e30613;
+    padding:12px 50px;
+    display:flex;
+    gap:35px;
+    font-weight:600;
+}
+
+.nav a{
+    color:white;
+    text-decoration:none;
+    position:relative;
+}
+
+.nav a::after{
+    content:"";
+    position:absolute;
+    bottom:-5px;
+    left:0;
+    width:0%;
+    height:3px;
+    background:white;
+    transition:0.3s;
+}
+
+.nav a:hover::after{
+    width:100%;
+}
+
+/* SLIDER */
+.slider{
+    position:relative;
+    height:420px;
+    overflow:hidden;
+}
+
+.slide{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-size:cover;
+    background-position:center 5%;
+    opacity:0;
+    transition:opacity 1s ease-in-out;
+}
+
+.slide.active{
+    opacity:1;
+}
+
+/* HERO TEXT */
+.hero-text{
+    position:absolute;
+    top:50%;
+    left:60px;
+    transform:translateY(-50%);
+    max-width:500px;
+    color:#0b1a4a;
+    animation:fadeUp 1s ease;
+    z-index: 4;
+}
+
+.hero-text h1{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.hero-text p{
+    font-size:20px;
+}
+
+/* PRODUCTS */
+.products{
+    position: relative;
+    z-index: 5;
+    margin: top -120px;
+    padding: 40px;
+}
+
+.product-grid{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.product{
+    background:white;
+    width:170px;
+    border-radius:12px;
+    padding:15px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.product:hover{
+    transform:translateY(-10px) scale(1.03);
+}
+
+.product img{
+    width:100%;
+    height:140px;
+    object-fit:contain;
+}
+
+.product p{
+    margin-top:10px;
+    font-weight:600;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .nav{
+        flex-wrap:wrap;
+    }
+
+    .hero-text h1{
+        font-size:28px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <div class="logo">
+        <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png">
+        DogFood Market
+    </div>
+
+    <div class="icons">
+        <i class="fas fa-arrow-left"></i>
+        <i class="fas fa-shopping-cart"></i>
+    </div>
+</div>
+
+<!-- NAV -->
+<div class="nav">
+    <a href="#">🐶 Perro</a>
+    <a href="#">🐱 Gato</a>
+    <a href="#">Otras mascotas</a>
+    <a href="#">Juguetes y accesorios</a>
+    <a href="#">Farmacia e higiene</a>
+</div>
+
+<!-- SLIDER -->
+<div class="slider">
+
+    <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1601758228041-f3b2795255f1');"></div>
+    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1583511655857-d19b40a7a54e');"></div>
+
+    <div class="hero-text">
+        <h1>¡Bienvenido!</h1>
+        <p>Aquí encontrarás los mejores consejos y novedades para tener mascotas más felices.</p> 
+        
+    </div>
+
+</div>
+
+<!-- PRODUCTS -->
+<section class="products">
+    <div class="product-grid">
+
+        <div class="product">
+            <img src="ricocan.jpg.jpeg">
+            <p>RicoCan</p>
+        </div>
+
+        <div class="product">
+            <img src="Ricocrack.jpg.jpeg">
+            <p>Rico Crack</p>
+        </div>
+
+        <div class="product">
+            <img src="mimaskot.jpg.jpeg">
+            <p>Mimaskot</p>
+        </div>
+
+        <div class="product">
+            <img src="pro plan.jpg.jpeg">
+            <p>Pro Plan</p>
+        </div>
+
+        <div class="product">
+            <img src="super cat.jpg.jpeg">
+            <p>Super Cat</p>
+        </div>
+
+        <div class="product">
+            <img src="canbo.png">
+            <p>Canbo</p>
+        </div>
+
+        <div class="product">
+            <img src="rico cat.jpg.jpeg">
+            <p>Ricocat</p>
+        </div>
+
+    </div>
+</section>
+
+<script>
+let slides = document.querySelectorAll('.slide');
+let index = 0;
+
+setInterval(() => {
+    slides[index].classList.remove('active');
+    index = (index + 1) % slides.length;
+    slides[index].classList.add('active');
+}, 4000);
+</script>
+
+</body>
+</html>
